@@ -225,7 +225,7 @@ export default class World {
 		this.camera.start(ctx);
 
 		// Render selected world layers
-		this.render_world_layer(ctx, this.world_layers.collision, (tile_world_x: number, tile_world_y: number) => {
+		this.render_world_layer(ctx, this.world_layers.layer_collidable, (tile_world_x: number, tile_world_y: number) => {
 			create_player_collision(
 				this.player,
 				new Vector2(tile_world_x, tile_world_y),
@@ -240,7 +240,7 @@ export default class World {
 				);
 			}
 		});
-		this.render_world_layer(ctx, this.world_layers.floor);
+		this.render_world_layer(ctx, this.world_layers.layer_non_collidable);
 		this.render_object_layer(ctx, this.world_layers.decorations_bottom);
 		this.render_object_layer(ctx, this.world_layers.decorations_top);
 

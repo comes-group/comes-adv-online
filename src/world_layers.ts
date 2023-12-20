@@ -63,8 +63,8 @@ export class WorldLayers {
 	decorations_top: Array<WorldLayerObject> = [];
 	decorations_bottom: Array<WorldLayerObject> = [];
 
-	collision: Array<WorldLayerChunk> = [];
-	floor: Array<WorldLayerChunk> = [];
+	layer_collidable: Array<WorldLayerChunk> = [];
+	layer_non_collidable: Array<WorldLayerChunk> = [];
 
 	tileset: TileSet;
 
@@ -77,11 +77,11 @@ export class WorldLayers {
 				let layer_chunk = new WorldLayerChunk(chunk);
 
 				if (layer.name == "Collision") {
-					this.collision.push(layer_chunk);
+					this.layer_collidable.push(layer_chunk);
 				}
 
 				if (layer.name == "Floor") {
-					this.floor.push(layer_chunk);
+					this.layer_non_collidable.push(layer_chunk);
 				}
 			}
 		};

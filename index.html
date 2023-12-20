@@ -13,54 +13,6 @@
 
 	<div class="main-view">
 		<div id="stage">
-			<div id="ui-layer">
-				<div id="item-pick-dialog">
-					Press <kbd>E</kbd> to pick:
-					<ul>
-						<li>aaa</li>
-					</ul>
-				</div>
-				<div id="player-equipment">
-					<div class="scroll">
-						<div class="player-info">
-							<div class="equipped"></div>
-						</div>
-						<br>
-					</div>
-				</div>
-				<div id="interact-with-npc">
-					Press <kbd>F</kbd> to talk with:
-					<span></span>
-				</div>
-				<div id="player-quests">
-					Things you must do:
-					<ul>
-					</ul>
-				</div>
-				<div id="talk-with-npc-dialog">
-					<div>
-						<img src="https://cdn.discordapp.com/attachments/635191339859836948/902221013150998608/unknown.png"
-							width="128">
-						<div>
-							<b>Old man</b>
-							<span>
-								Welcome Comes, this is world. You must defeat Final Boss.
-							</span>
-						</div>
-					</div>
-					<button>Next</button>
-				</div>
-				<div id="player-stats">
-					<div>
-						HP:
-						<input type="range" id="player-stats-hp" min="0" max="100" value="100" disabled>
-					</div>
-					<div>
-						MP:
-						<input type="range" id="player-stats-mana" min="0" max="100" value="100" disabled>
-					</div>
-				</div>
-			</div>
 			<canvas id="game-canvas" width="800" height="600" style="border:1px solid lightgrey;"></canvas>
 		</div>
 
@@ -108,7 +60,7 @@
 		</ul>
 	</div>
 
-	<script type="module" src="./src/client.ts"></script>
+	<script type="module" src="./src/v2/client.ts"></script>
 
 	<style>
 		body {
