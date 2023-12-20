@@ -9,110 +9,110 @@
 </head>
 
 <body>
-	<h1>COMES ADVENTURES</h1>
+	<img src="v2/textures/ui/logo.png" alt="" srcset="" style="margin-top:1em;margin-bottom: 1em;">
 
-	<div id="stage">
-		<div id="ui-layer">
-			<div id="item-pick-dialog">
-				Press <kbd>E</kbd> to pick:
-				<ul>
-					<li>aaa</li>
-				</ul>
-			</div>
-			<div id="player-equipment">
-				<div class="scroll">
-					<div class="player-info">
-						<div class="equipped"></div>
-					</div>
-					<br>
+	<div class="main-view">
+		<div id="stage">
+			<div id="ui-layer">
+				<div id="item-pick-dialog">
+					Press <kbd>E</kbd> to pick:
+					<ul>
+						<li>aaa</li>
+					</ul>
 				</div>
-			</div>
-			<div id="interact-with-npc">
-				Press <kbd>F</kbd> to talk with:
-				<span></span>
-			</div>
-			<div id="player-quests">
-				Things you must do:
-				<ul>
-				</ul>
-			</div>
-			<div id="talk-with-npc-dialog">
-				<div>
-					<img src="https://cdn.discordapp.com/attachments/635191339859836948/902221013150998608/unknown.png"
-						width="128">
+				<div id="player-equipment">
+					<div class="scroll">
+						<div class="player-info">
+							<div class="equipped"></div>
+						</div>
+						<br>
+					</div>
+				</div>
+				<div id="interact-with-npc">
+					Press <kbd>F</kbd> to talk with:
+					<span></span>
+				</div>
+				<div id="player-quests">
+					Things you must do:
+					<ul>
+					</ul>
+				</div>
+				<div id="talk-with-npc-dialog">
 					<div>
-						<b>Old man</b>
-						<span>
-							Welcome Comes, this is world. You must defeat Final Boss.
-						</span>
+						<img src="https://cdn.discordapp.com/attachments/635191339859836948/902221013150998608/unknown.png"
+							width="128">
+						<div>
+							<b>Old man</b>
+							<span>
+								Welcome Comes, this is world. You must defeat Final Boss.
+							</span>
+						</div>
+					</div>
+					<button>Next</button>
+				</div>
+				<div id="player-stats">
+					<div>
+						HP:
+						<input type="range" id="player-stats-hp" min="0" max="100" value="100" disabled>
+					</div>
+					<div>
+						MP:
+						<input type="range" id="player-stats-mana" min="0" max="100" value="100" disabled>
 					</div>
 				</div>
-				<button>Next</button>
 			</div>
-			<div id="player-stats">
-				<div>
-					HP:
-					<input type="range" id="player-stats-hp" min="0" max="100" value="100" disabled>
-				</div>
-				<div>
-					MP:
-					<input type="range" id="player-stats-mana" min="0" max="100" value="100" disabled>
-				</div>
-			</div>
+			<canvas id="game-canvas" width="800" height="600" style="border:1px solid lightgrey;"></canvas>
 		</div>
-		<canvas id="game-canvas" width="800" height="600" style="border:1px solid lightgrey;"></canvas>
+
+		<br>
+
+		<label for="sound-volume">Sound volume:</label>
+		<input type="range" id="sound-volume" min="0" max="100" value="100">
+
+		<br>
+
+		<label for="music-volume">Music volume:</label>
+		<input type="range" id="music-volume" min="0" max="100" value="100">
+
+
+		<h3>Controls:</h3>
+		<ul>
+			<li><kbd>E</kbd> Pick up items</li>
+			<li><kbd>F</kbd> Talk to npc</li>
+			<li><kbd>I</kbd> Open inventory</li>
+			<li><kbd>SPACE</kbd> Attack</li>
+			<li><kbd>W</kbd>, <kbd>A</kbd>, <kbd>S</kbd>, <kbd>D</kbd> Control character</li>
+		</ul>
+
+		<h3>Credits:</h3>
+		<ul>
+			<li>
+				<h4>Programming:</h4>
+				<ul>
+					<li>firstbober</li>
+				</ul>
+			</li>
+			<li>
+				<h4>Graphics:</h4>
+				<ul>
+					<li>liquidev</li>
+					<li>firstbober</li>
+				</ul>
+			</li>
+			<li>
+				<h4>Music:</h4>
+				<ul>
+					<li>liquidev</li>
+				</ul>
+			</li>
+		</ul>
 	</div>
 
-	<button id="ui-save-button">Save game</button>
-
-	<br>
-
-	<label for="sound-volume">Sound volume:</label>
-	<input type="range" id="sound-volume" min="0" max="100" value="100">
-
-	<br>
-
-	<label for="music-volume">Music volume:</label>
-	<input type="range" id="music-volume" min="0" max="100" value="100">
-
-
-	<h3>Controls:</h3>
-	<ul>
-		<li><kbd>E</kbd> Pick up items</li>
-		<li><kbd>F</kbd> Talk to npc</li>
-		<li><kbd>I</kbd> Open inventory</li>
-		<li><kbd>SPACE</kbd> Attack</li>
-		<li><kbd>W</kbd>, <kbd>A</kbd>, <kbd>S</kbd>, <kbd>D</kbd> Control character</li>
-	</ul>
-
-	<h3>Credits:</h3>
-	<ul>
-		<li>
-			<h4>Programming:</h4>
-			<ul>
-				<li>firstbober</li>
-			</ul>
-		</li>
-		<li>
-			<h4>Graphics:</h4>
-			<ul>
-				<li>liquidev</li>
-				<li>firstbober</li>
-			</ul>
-		</li>
-		<li>
-			<h4>Music:</h4>
-			<ul>
-				<li>liquidev</li>
-			</ul>
-		</li>
-	</ul>
-
-	<script src="./dist/main.js"></script>
+	<script type="module" src="./src/client.ts"></script>
 
 	<style>
 		body {
-			background-image: url('./assets/background.png');
+			background-image: url('./v2/textures/ui/index-background.webp');
 			color: white;
 		}
 
@@ -255,6 +255,18 @@
 
 		#player-stats div:nth-child(2) input {
 			filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(-180deg) saturate(700%) contrast(0.8);
+		}
+
+		body {
+			display: flex;
+			width: 100%;
+			align-items: center;
+			flex-direction: column;
+			margin: 0 auto;
+		}
+
+		.main-view {
+			background-color: #00000073;
 		}
 	</style>
 </body>

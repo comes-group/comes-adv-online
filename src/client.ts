@@ -45,9 +45,4 @@ document.body.addEventListener('keyup', (ev) => {
 	delete world.key_pressed[ev.key.toLowerCase()];
 });
 
-// Game saving, maybe
-document.body.querySelector("#ui-save-button").addEventListener('click', (ev) => {
-	console.log(JSON.stringify(world));
-});
-
 window.requestAnimationFrame(game_loop);
